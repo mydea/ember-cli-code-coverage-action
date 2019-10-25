@@ -40,4 +40,6 @@ or you can specify a custom test command:
 ```
 
 You can also specify a custom `coverage-file` (defaults to `./coverage/coverage-summary.json`), 
+If ember app located not in the root of a repo you should also specify  `working-directory` option.
+
 and a `coverage-indicator`, which defaults to `statement` (which defines which type of coverage will be used).

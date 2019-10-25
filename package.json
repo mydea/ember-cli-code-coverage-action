@@ -1,34 +1,26 @@
 {
-  "name": "ember-asset-size-action",
+  "name": "ember-cli-code-coverage-action",
   "version": "0.0.0",
   "private": true,
-  "description": "Show asset size changes on ",
+  "description": "Show code coverage changes on PRs",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=TEST GITHUB_REPOSITORY=simplabs/ember-asset-size-action mocha -r esm"
+    "mock-test": "yarn -v"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mansona/ember-asset-size-action.git"
+    "url": "git+https://github.com/mydea/ember-cli-code-coverage-action.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "Chris Manson",
+  "author": "Francesco Novy",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.0.0",
     "@actions/exec": "^1.0.0",
-    "@actions/github": "^1.0.0",
-    "asset-size-reporter": "^0.1.0",
-    "esm": "^3.2.25",
-    "pretty-bytes": "^5.0.0"
-  },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "cross-env": "^6.0.3",
-    "mocha": "^6.2.1"
+    "@actions/github": "^1.0.0"
   }
 }

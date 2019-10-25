@@ -1,12 +1,21 @@
-name: 'Ember Asset Size'
-description: 'Find out how much of a change to your asset size a PR will have'
-author: 'Chris Manson'
+name: 'ember-cli-code-coverage check'
+description: 'Find out how much of a change to your code coverage size a PR will have'
+author: 'Francesco Novy'
 branding:
   icon: 'bar-chart-2'
   color: 'orange'
 inputs:
   repo-token:
     description: 'The GITHUB_TOKEN secret'
+  test-command:
+    description: 'The command to run your tests'
+    default: 'COVERAGE=true yarn test'
+  coverage-file:
+    description: 'The location of coverage summary.json file'
+    default: './coverage/coverage-summary.json'
+  coverage-indicator:
+    descirption: 'The coverage type to use. One of: statements, lines, functions, branches'
+    default: 'statements'
 runs:
   using: 'node12'
   main: 'index.js'

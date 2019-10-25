@@ -55,7 +55,7 @@ ${body}`);
 }
 
 async function getTestCoverage({ testCommand, coverageFilePath, coverageIndicator, workingDirectory }) {
-  await exec(testCommand,{cwd:workingDirectory});
+  await exec(testCommand,[],{cwd:workingDirectory});
 
   let coverageFile = fs.readFileSync(coverageFilePath, 'utf-8');
   let coverageSummary = JSON.parse(coverageFile);

@@ -16,6 +16,9 @@ inputs:
   coverage-indicator:
     descirption: 'The coverage type to use. One of: statements, lines, functions, branches'
     default: 'statements'
+  working-directory:
+    descirption: 'Ember app directory'
+    default: './'
 runs:
   using: 'node12'
   main: 'index.js'

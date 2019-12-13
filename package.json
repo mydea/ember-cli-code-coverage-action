@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-code-coverage-action",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "private": true,
   "description": "Show code coverage changes on PRs",
   "main": "index.js",

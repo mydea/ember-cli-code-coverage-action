@@ -21,6 +21,12 @@ async function run() {
 
     let testCoverage = await getTestCoverage({ testCommand, coverageFilePath, coverageIndicator, workingDirectory });
 
+    console.log(`
+    
+New test coverage: ${testCoverage}%
+    
+    `);
+
     await exec(`git checkout ${pullRequest.base.sha}`);
 
     // This could fail, e.g. if no test coverage existed before
@@ -30,6 +36,12 @@ async function run() {
     } catch (error) {
       testCoverageBefore = 0;
     }
+
+    console.log(`
+    
+Previous test coverage: ${testCoverageBefore}%
+    
+    `);
 
     let body = buildOutput({ testCoverage, testCoverageBefore });
 

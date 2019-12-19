@@ -19,6 +19,9 @@ inputs:
   working-directory:
     descirption: 'Ember app directory'
     default: './'
+  message:
+    descirption: 'Comment message title that will be posted on PR'
+    default: 'Test coverage: **{testCoverage}%**'
 runs:
   using: 'node12'
   main: 'index.js'

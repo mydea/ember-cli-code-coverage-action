@@ -28,18 +28,30 @@ jobs:
 
 Note that the `GITHUB_TOKEN` secret is automatically available, so you don't need to do anything else about that.
 
-By default, it will run `yarn test-coverage`. 
-Either you add something like this: `"test-coverage": "COVERAGE=true ember test"` to your package.json file, 
-or you can specify a custom test command:
 
-```yaml
-- uses: mydea/ember-cli-code-coverage-action@v1
-  with:
-    repo-token: "${{ secrets.GITHUB_TOKEN }}"
-    test-command: "yarn my-test-command"
-```
+## Setting up
 
-You can also specify a custom `coverage-file` (defaults to `./coverage/coverage-summary.json`), 
-If ember app located not in the root of a repo you should also specify  `working-directory` option.
+`repo-token` **required**
+Token to post statuses and comments on yore repo. Note that the `GITHUB_TOKEN` secret is automatically available, so you don't need to do anything else about that.
 
-and a `coverage-indicator`, which defaults to `statement` (which defines which type of coverage will be used).
+
+`test-command` *optional*
+Default: `yarn test-coverage`
+The command to run your tests.
+Either you add something like this: `"test-coverage": "COVERAGE=true ember test"` to your package.json file, or you can specify a custom test command.
+
+`coverage-file` *optional*
+Default: `./coverage/coverage-summary.json`
+The location of coverage summary.json file.
+
+`coverage-indicator` *indicator*
+Default: `statements`
+The coverage type to use. One of: `statements`, `lines`, `functions`, `branches`.
+
+`working-directory` *directory*
+Default: `./`
+Ember app directory.
+
+`message` *optional*
+Default: `Test coverage: **{testCoverage}%**`
+Message title that will be used when posting status on PR comments section.

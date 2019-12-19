@@ -14,7 +14,7 @@ async function run() {
     let coverageFilePath = getInput('coverage-file', { required: true });
     let coverageIndicator = getInput('coverage-indicator', { required: true });
     let workingDirectory = getInput('working-directory', { required: true });
-    let messageFormat = getInput('message', { required: false });
+    let messageFormat = getInput('message', { required: true });
     
 
     octokit = new GitHub(myToken);

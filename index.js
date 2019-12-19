@@ -14,6 +14,7 @@ async function run() {
     let coverageFilePath = getInput('coverage-file', { required: true });
     let coverageIndicator = getInput('coverage-indicator', { required: true });
     let workingDirectory = getInput('working-directory', { required: true });
+    let messageFormat = getInput('message', { required: false });
     
 
     octokit = new GitHub(myToken);
@@ -43,7 +44,7 @@ Previous test coverage: ${testCoverageBefore}%
     
     `);
 
-    let body = buildOutput({ testCoverage, testCoverageBefore });
+    let body = buildOutput(messageFormat,{ testCoverage, testCoverageBefore });
 
     try {
       await octokit.issues.createComment({

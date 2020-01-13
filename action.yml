@@ -14,13 +14,13 @@ inputs:
     description: 'The location of coverage summary.json file'
     default: './coverage/coverage-summary.json'
   coverage-indicator:
-    descirption: 'The coverage type to use. One of: statements, lines, functions, branches'
+    description: 'The coverage type to use. One of: statements, lines, functions, branches'
     default: 'statements'
   working-directory:
-    descirption: 'Ember app directory'
+    description: 'Ember app directory'
     default: './'
   message:
-    descirption: 'Comment message title that will be posted on PR'
+    description: 'Comment message title that will be posted on PR'
     default: 'Test coverage: **{testCoverage}%**'
 runs:
   using: 'node12'

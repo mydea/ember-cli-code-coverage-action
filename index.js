@@ -14,7 +14,6 @@ async function run() {
     let coverageFilePath = getInput('coverage-file', { required: true });
     let coverageIndicator = getInput('coverage-indicator', { required: true });
     let workingDirectory = getInput('working-directory', { required: true });
-    
 
     octokit = new GitHub(myToken);
     let pullRequest = await getPullRequest();
@@ -27,6 +26,7 @@ New test coverage: ${testCoverage}%
     
     `);
 
+    await exec(`git fetch origin ${pullRequest.base.sha}`);
     await exec(`git checkout ${pullRequest.base.sha}`);
 
     // This could fail, e.g. if no test coverage existed before
